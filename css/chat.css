@@ -1,0 +1,147 @@
+/* =========================
+ROOT COLORS (ngikut tema website lo)
+========================= */
+:root {
+    --bg: #0a0f1a;
+    --glass: rgba(255,255,255,0.06);
+    --border: rgba(255,255,255,0.18);
+    --cyan: #00ffff;
+    --white: #ffffff;
+    --text-muted: rgba(255,255,255,0.75);
+}
+
+/* =========================
+FORM WRAPPER
+========================= */
+#wrapper {
+    max-width: 900px;
+    margin: 120px auto 60px;
+    padding: 0 20px;
+    color: var(--white);
+    text-align: center;
+}
+
+#wrapper h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+#wrapper hr {
+    width: 80px;
+    margin: 10px auto 25px;
+    border: none;
+    height: 3px;
+    background: var(--cyan);
+    border-radius: 50px;
+}
+
+/* =========================
+FORM CONTAINER (glass card)
+========================= */
+.form-control {
+    width: 100%;
+    max-width: 640px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 28px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 18px rgba(0,255,255,0.15);
+    transition: .25s;
+}
+
+.form-control:hover {
+    box-shadow: 0 0 25px rgba(0,255,255,0.25);
+}
+
+.form-control form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* kasih jarak antar input */
+}
+
+
+/* =========================
+TEXTS
+========================= */
+.form-control h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--white);
+}
+
+.form-control p {
+    font-size: 14px;
+    opacity: .75;
+    margin-bottom: 22px;
+}
+
+/* =========================
+INPUT & TEXTAREA
+========================= */
+.form-control input,
+.form-control textarea {
+    width: 100%;
+    padding: 14px 16px; /* kanan kiri ditambah */
+    border-radius: 10px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--white);
+    font-size: 15px;
+    outline: none;
+    transition: .2s;
+    backdrop-filter: blur(4px);
+}
+
+.form-control input::placeholder,
+.form-control textarea::placeholder {
+    color: rgba(255,255,255,0.55);
+}
+
+.form-control input:focus,
+.form-control textarea:focus {
+    border-color: var(--cyan);
+    box-shadow: 0 0 12px rgba(0,255,255,0.25);
+}
+
+/* =========================
+BUTTON
+========================= */
+.btn-send {
+    width: 100%;
+    padding: 14px;
+    margin-top: 4px;
+    background-color: rgb(31, 31, 31);
+    color: rgba(255, 255, 255, 0.529);
+    font-weight: 700;
+    backdrop-filter: blur(10px); 
+    border: 0.8px solid rgba(161, 161, 161, 0.273);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-send:hover {
+    filter: brightness(0.9);
+}
+
+.btn-send:active {
+    transform: scale(0.98);
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    #wrapper h2 {
+        font-size: 26px;
+    }
+
+    .form-control {
+        padding: 22px;
+    }
+}

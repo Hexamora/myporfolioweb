@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ox48i</title>
+    <link rel="stylesheet" href="../css/project.css">
+    <link rel="website icon" href="../assets/icon.png">
+    <script src="https://kit.fontawesome.com/11673fa9e8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="vanta-bg"></div>
+
+    <nav>
+        <div class="title">
+            <a href="">Hadi.</a>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="profile.html" class="btn btn-profile">Profile</a></li>
+            </ul>                
+        </div>
+    </nav>
+
+
+    
+    <div id="wrapper">
+        <div class="project">
+            <h2>List Project</h2>
+            <div class="pc">
+                <div class="image">
+                    <img src="../../assets/P1.png" alt="">
+                </div>
+                <div class="deskripsi">
+                    <h2>My First Porto Website</h2>
+                    <p>Project ini adalah website Porto saya yang pertama, website ini dibuat dengan sepenuh hati dan kali pertama mencoba membuat website dengan pengetahuan saya yang masih kurang tentang HTML dan CSS serta JS.</p>
+                    <a href="https://github.com/Hexamora/Abdllhhadi.github.io" target="_blank" class="btn btn-more">see more</a>
+                </div>
+            </div>
+            <div class="pc">
+                <div class="image">
+                        <img src="../../assets/P2.png" alt="">
+                </div>
+                <div class="deskripsi">
+                    <h2>IP INFO</h2>
+                    <p>Project ini adalah IP INFO, Tool ini berfungsi untuk mendapatkan informasi seputar IP Target. Informasi yang bisa didapatkan seperti Location dan lain-lain.</p>
+                    <a href="https://github.com/Hexamora/ipinfo" target="_blank" class="btn btn-more">see more</a>
+                </div>
+            </div>
+            <div class="pc">
+                <div class="image">
+                        <img src="../../assets/P3.png" alt="">
+                </div>
+                <div class="deskripsi">
+                    <h2>Phone Number Scanner</h2>
+                    <p>Project ini adalah Phone Number Scanner, Tool ini berfungsi untuk mendapatkan informasi berdasarkan nomor telepon yang diberikan.</p>
+                    <a href="https://github.com/Hexamora/PhoneNumberScanner" target="_blank" class="btn btn-more">see more</a>
+                </div>
+            </div>  
+            <div class="pc">
+                <div class="image">
+                        <img src="https://camo.githubusercontent.com/37cce3bbfc11b71f674167d0fde61440614afd917657481c44c728028b1d0cfa/68747470733a2f2f66696c65732e636174626f782e6d6f652f6d3978666a632e706e67" alt="">
+                </div>
+                <div class="deskripsi">
+                    <h2>WiFi DoS - TOOL</h2>
+                    <p>Project ini adalah WiFi DoS, Tool ini saya buat dan gunakan untuk melakukan pentest pada wifi/network yang sedang saya kerjakan.</p>
+                    <a href="https://github.com/Hexamora/wifi_dos" target="_blank" class="btn btn-more">see more</a>
+                </div>
+            </div>  
+        </div>
+    </div>
+        
+        <br>
+        <br>
+        <br>
+    </div>
+
+<script src="../js/protect.js"></script>
+<script>
+    // HAMBURGER LOGIC
+    const menuToggle = document.getElementById("menu-toggle");
+    const navList = document.querySelector(".nav-list");
+
+    menuToggle.addEventListener("click", () => {
+        navList.classList.toggle("active");
+        menuToggle.classList.toggle("open");
+    });
+</script>
+</body>
+</html>

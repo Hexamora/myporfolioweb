@@ -1,0 +1,175 @@
+.services-section {
+    max-width: 1100px;
+    margin: 90px auto 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.services-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.services-desc {
+    opacity: .75;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.service-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 28px 18px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+    transition: .25s;
+    cursor: pointer;
+}
+
+.service-card i {
+    font-size: 32px;
+    margin-bottom: 15px;
+    opacity: .9;
+}
+
+.service-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    opacity: .8;
+    line-height: 1.45;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0,255,255,0.5);
+    box-shadow: 0 0 15px rgba(0,255,255,0.25);
+}
+
+/* ============================
+      ORDER FORM SECTION
+=============================== */
+
+.order-section {
+    max-width: 800px;
+    margin: 40px auto 120px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.order-title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.order-desc {
+    opacity: .8;
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+form {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(6px);
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    opacity: .85;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+/* ============================
+      SELECT & OPTION THEME
+=============================== */
+.form-group select {
+    appearance: none;
+    background-color: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Biar dropdown menu juga gelap */
+.form-group select option {
+    background-color: #0f0f0f;
+    color: #fff;
+}
+
+/* Hover effect untuk option */
+.form-group select option:hover {
+    background-color: #00ffff !important;
+    color: #000 !important;
+}
+
+/* Scrollbar option (Chrome) */
+.form-group select option::-webkit-scrollbar {
+    width: 8px;
+}
+
+.form-group select option::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 4px;
+}
+
+/* Textarea */
+textarea {
+    height: 120px;
+}
+
+/* Button submit */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: cyan;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .25s;
+}
+
+.submit-btn:hover {
+    opacity: .8;
+}
+
+/* Responsive HP */
+@media (max-width: 768px) {
+    .services-title { font-size: 26px; }
+    .service-card i { font-size: 27px; }
+}

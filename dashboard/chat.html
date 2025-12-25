@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat | Ox48i</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/chat.css">
+    <link rel="website icon" href="../assets/icon.png">
+    <script src="https://kit.fontawesome.com/11673fa9e8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="title">
+            <a href="../index.html">Hadi.</a>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="profile.html" class="btn btn-profile">Profile</a></li>
+            </ul>                
+        </div>
+    </nav>
+
+    <div id="wrapper">
+        <h2>Chat</h2>
+        <hr>  
+    <div class="form-control">
+        <h3>Anonymous Chat</h3>
+        <p>Chat ini bersifat rahasia, karena tidak mencantumkan nama user.</p>
+        <form id="contactForm">
+            <input type="text" name="Subject" id="Subject" placeholder="Subject | Judul" required autocomplete="off">
+            <textarea id="Message" name="Message" rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn-send">Send</button>
+        </form>
+    </div>
+
+    </div>
+
+<script src="../js/protect.js"></script>
+<script>
+document.getElementById("contactForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const subject = document.getElementById("Subject").value.trim();
+    const message = document.getElementById("Message").value.trim();
+
+    if (!subject || !message) {
+        alert("Isi semua field dulu bro..");
+        return;
+    }
+
+    const webhookURL = "https://discord.com/api/webhooks/1429036670589861918/D5bRweOUlyMbGkeJvHE9PUQiNGeCadW_LkeagCqqjnWKkZEG-GGCKt1i-QQm80p46klM";
+
+    const payload = {
+        username: "Anonymous Chat",
+        avatar_url: "https://i.imgur.com/4M34hi2.png",
+        embeds: [
+            {
+                title: subject,
+                description: message,
+                color: 0x00ffcc,
+                footer: {
+                    text: "Anonymous Website Chat"
+                },
+                timestamp: new Date().toISOString()
+            }
+        ]
+    };
+
+    try {
+        const res = await fetch(webhookURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+            alert("Pesan terkirim!");
+            document.getElementById("Subject").value = "";
+            document.getElementById("Message").value = "";
+        } else {
+            alert("Gagal kirim pesan");
+        }
+    } catch (err) {
+        alert("⚠️ Error koneksi");
+        console.error(err);
+    }
+});
+
+// HAMBURGER LOGIC
+const menuToggle = document.getElementById("menu-toggle");
+const navList = document.querySelector(".nav-list");
+
+menuToggle.addEventListener("click", () => {
+    navList.classList.toggle("active");
+    menuToggle.classList.toggle("open");
+});
+</script>
+</body>
+</html>

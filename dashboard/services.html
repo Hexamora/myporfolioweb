@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Ox48i</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="website icon" href="../assets/icon.png">
+    <script src="https://kit.fontawesome.com/11673fa9e8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="title">
+            <a href="index.html">Hadi.</a>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="profile.html" class="btn btn-profile">Profile</a></li>
+            </ul>                
+        </div>
+    </nav>
+    
+
+    <section class="services-section">
+    <h2 class="services-title">My Services</h2>
+    <p class="services-desc">
+        Building cool stuff and keeping cyberspace safe. Pick your service 😎⚡
+    </p>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <i class="fa-solid fa-id-card"></i>
+            <h3>Website Absensi Sederhana</h3>
+            <p>Sistem absensi simpel untuk sekolah, komunitas, atau bisnis kecil.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-user"></i>
+            <h3>Website Portfolio</h3>
+            <p>Bikin personal portfolio elegan biar tampilan makin profesional.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-shop"></i>
+            <h3>Website Usaha</h3>
+            <p>Website modern buat UMKM sampe brand startup vibes.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>Perencanaan Databases</h3>
+            <p>Merencanakan struktur database sistem untuk pengolahan data buat workflow lebih rapi.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h3>Web Penetration Testing</h3>
+            <p>Pengetesan keamanan website secara legal & ethical.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-user-secret"></i>
+            <h3>OSINT</h3>
+            <p>Open-Source Intelligence untuk investigasi digital.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-skull-crossbones"></i>
+            <h3>Ethical Attack Simulation</h3>
+            <p>Simulasi serangan untuk mengukur ketahanan sistem (legal + izin).</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-shield"></i>
+            <h3>Defending Website</h3>
+            <p>Proteksi website dari serangan, patch celah keamanan, dan pemantauan keamanan.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fa-solid fa-gamepad"></i>
+            <h3>Joki & Coaching Valorant</h3>
+            <p>Boosting ringan + coaching tips aim & game sense. No cheat, pure skill and grind.</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="order-section" id="orderFormSection">
+    <h2 class="order-title">Order My Services</h2>
+    <p class="order-desc">Silahkan masukkan pesanan anda di form ini.</p>
+
+    <form id="orderForm">
+        <div class="form-group">
+            <label>Nama Pemesan</label>
+            <input type="text" name="nama" required>
+        </div>
+
+        <div class="form-group">
+            <label>No Telp</label>
+            <input type="text" name="telp" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gmail</label>
+            <input type="email" name="gmail" required>
+        </div>
+
+        <div class="form-group">
+            <label>Pilih Service</label>
+            <select name="service" required>
+                <option value="">-- Pilih Service --</option>
+                <option>Website Absensi Sederhana</option>
+                <option>Website Portfolio</option>
+                <option>Website Usaha</option>
+                <option>Perencanaan Databases</option>
+                <option>Web Penetration Testing</option>
+                <option>OSINT</option>
+                <option>Ethical Attack Simulation</option>
+                <option>Defending Website</option>
+                <option>Joki & Coaching Valorant</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Pesan Tambahan</label>
+            <textarea name="pesan" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Kirim</button>
+    </form>
+</section>
+
+
+
+<script src="../js/protect.js"></script>
+<script>
+    // ========= HAMBURGER ==========
+    const menuToggle = document.getElementById("menu-toggle");
+    const navList = document.querySelector(".nav-list");
+
+    menuToggle.addEventListener("click", () => {
+        navList.classList.toggle("active");
+        menuToggle.classList.toggle("open");
+    });
+
+
+    // ========= DISCORD WEBHOOK FORM ==========
+    const WEBHOOK_URL = "https://discord.com/api/webhooks/1444241337900728360/XKqWU2UvkTZ1DIhmsaE3p79xc2jQV-esV3woGpJfSAnu0W_ahACPyXawvm0HBCfjWYcz";
+
+    document.getElementById("orderForm").addEventListener("submit", function(e){
+        e.preventDefault();
+
+        const data = {
+            nama: this.nama.value,
+            telp: this.telp.value,
+            gmail: this.gmail.value,
+            service: this.service.value,
+            pesan: this.pesan.value
+        };
+
+        fetch(WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                embeds: [{
+                    title: "🔔 New Service Order",
+                    color: 5814783,
+                    fields: [
+                        { name: "Nama", value: data.nama },
+                        { name: "No Telp", value: data.telp },
+                        { name: "Email", value: data.gmail },
+                        { name: "Service", value: data.service },
+                        { name: "Pesan Tambahan", value: data.pesan }
+                    ],
+                    footer: { text: "Order masuk dari website 🔥" }
+                }]
+            })
+        });
+
+        alert("Pesanan berhasil dikirim! 🎉");
+        this.reset();
+    });
+
+
+
+    // ================================
+    //   FITUR BARU:
+    //   Klik card → scroll + auto isi
+    // ================================
+
+    const cards = document.querySelectorAll(".service-card");
+    const selectService = document.querySelector("select[name='service']");
+    const orderSection = document.getElementById("orderFormSection");
+
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+
+            // Ambil nama service dari h3 di dalam card
+            const serviceName = card.querySelector("h3").innerText;
+
+            // Auto pilih service sesuai card
+            selectService.value = serviceName;
+
+            // Scroll halus ke form
+            orderSection.scrollIntoView({ behavior: "smooth" });
+        });
+    });
+</script>
+
+
+</body> 
+</html>

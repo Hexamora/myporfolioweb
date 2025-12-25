@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Ox48i</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="website icon" href="../assets/icon.png">
+    <script src="https://kit.fontawesome.com/11673fa9e8.js" crossorigin="anonymous"></script>
+    <style>
+    #vanta-bg {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1; /* biar di belakang semua konten */
+    }
+    </style>
+</head>
+<body>
+    <div id="vanta-bg"></div>
+
+
+    <nav>
+        <div class="title">
+            <a href="index.html">Hadi.</a>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="nav-list">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="project.html">Project</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>                
+        </div>
+    </nav>
+
+    <div id="wrapper" class="profile-wrapper">
+        <div class="profile-card">
+            <img src="../../assets/profile2.webp" class="avatar" alt="profile">
+
+            <h2 class="name">Hadi.</h2>
+            <p class="role">Web Dev, Pentester & Learner</p>
+
+            <div class="socials">
+                <a href="https://github.com/Hexamora" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdullahnurhadi1868@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://x.com/bnymorgan" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <div class="bio-box">
+            <h3>About Me</h3>
+            <p>
+                Just a human who codes, sips coffee too much, 
+                and tries not to break production 😌✨  
+                I love web dev, cybersecurity, and building cool digital stuff.
+            </p>
+        </div>
+
+        <div class="skills-box">
+            <h3>Skills</h3>
+
+            <div class="skill">
+                <span>HTML / CSS</span>
+                <div class="bar"><div class="fill" style="width:90%"></div></div>
+            </div>
+            <div class="skill">
+                <span>JavaScript</span>
+                <div class="bar"><div class="fill" style="width:30%"></div></div>
+            </div>
+            <div class="skill">
+                <span>Python</span>
+                <div class="bar"><div class="fill" style="width:75%"></div></div>
+            </div>
+            <div class="skill">
+                <span>PHP</span>
+                <div class="bar"><div class="fill" style="width:50%"></div></div>
+            </div>
+            <div class="skill">
+                <span>Cybersecurity Basic</span>
+                <div class="bar"><div class="fill" style="width:90%"></div></div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="../js/protect.js"></script>
+<script>
+    // HAMBURGER LOGIC
+    const menuToggle = document.getElementById("menu-toggle");
+    const navList = document.querySelector(".nav-list");
+
+    menuToggle.addEventListener("click", () => {
+        navList.classList.toggle("active");
+        menuToggle.classList.toggle("open");
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.halo.min.js"></script>
+<script>
+    VANTA.HALO({
+    el: "#vanta-bg",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    baseColor: 0x1a1a1a,      // warna dasar background
+    backgroundColor: 0x000000, // warna belakang
+    amplitudeFactor: 2.00,     // tinggi efek gelombang halo
+    size: 1.10,                // besar lingkaran
+    xOffset: 0.0,             // geser ke kiri/kanan
+    yOffset: 0.0              // geser ke atas/bawah
+    })
+</script>
+</body>
+</html>

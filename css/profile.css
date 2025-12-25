@@ -1,0 +1,99 @@
+nav {
+position: fixed;
+top: 0;
+width: 100%;
+background: rgba(0,0,0,0.4); /* biar nyatu sama efek halo */
+backdrop-filter: blur(10px);
+z-index: 100;
+padding: 15px 30px;
+}
+
+body {
+padding-top: 35px; /* biar isi gak ketimpa navbar tapi juga gak jauh banget */
+}
+
+.profile-wrapper {
+max-width: 800px;
+margin: 10px auto 0 auto; /* semula 60px, turunin jadi 30px aja */
+padding: 0 20px;
+}
+
+
+.profile-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,255,255,0.2);
+}
+
+.name {
+    margin-top: 14px;
+    font-size: 26px;
+}
+
+.role {
+    font-size: 15px;
+    opacity: 0.8;
+}
+
+.socials {
+    margin-top: 15px;
+}
+.socials a {
+    font-size: 20px;
+    margin: 0 8px;
+    color: #fff;
+    transition: .2s;
+}
+.socials a:hover {
+    transform: scale(1.15);
+}
+
+.bio-box, .skills-box {
+    background: #1f2a38c3;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+.skill { margin-top: 12px; }
+
+.bar {
+    background: rgba(255,255,255,0.1);
+    height: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.fill {
+    background: linear-gradient(90deg,#00d4ff,#007aff);
+    height: 100%;
+    border-radius: 8px;
+}
+
+
+/* =========================
+RESPONSIVE BREAKPOINTS
+========================= */
+
+/* 📱 HP */
+@media screen and (max-width: 768px) {
+.profile-card { 
+    padding: 25px; 
+}
+    
+.avatar { 
+    width: 100px; height: 100px; 
+}
+
+}
