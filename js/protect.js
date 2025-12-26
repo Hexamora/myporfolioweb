@@ -38,13 +38,4 @@ document.documentElement.innerHTML = `
 window.stop();
 };
 
-
-if (key === allowedKey) {
-    sessionStorage.setItem("access", "granted");
-    allow();
-} else if (sessionStorage.getItem("access") === "granted") {
-    allow();
-} else {
-    deny();
-}
 })();
