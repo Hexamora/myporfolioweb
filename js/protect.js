@@ -5,21 +5,43 @@ const key = params.get("key");
 
 const allow = () => {
     document.documentElement.style.display = "block";
+    document.body.style.display = "block";
 };
 
 const deny = () => {
-    document.documentElement.innerHTML = `
+    // HAPUS TOTAL SEMUA NODE
+    document.open();
+    document.write(`
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
+        <meta charset="UTF-8">
         <title>403 Forbidden</title>
+        <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #020617;
+            color: #fff;
+            font-family: system-ui, sans-serif;
+        }
+        </style>
     </head>
-    <body style="margin:0;display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif;background:#0f172a;color:#fff">
+    <body>
         <div>
         <h1>403 Forbidden</h1>
         <p>Access denied.</p>
         </div>
     </body>
-    `;
-    throw new Error("Blocked");
+    </html>
+    `);
+    document.close();
+
+    // STOP ALL JS
+    throw new Error("ACCESS BLOCKED");
 };
 
 if (key === allowedKey) {
