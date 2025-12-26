@@ -9,35 +9,39 @@ const allow = () => {
 };
 
 const deny = () => {
-document.documentElement.innerHTML = `
+    document.open();
+    document.write(`
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
-    <meta charset="UTF-8">
-    <title>403 Forbidden</title>
-    <style>
+        <meta charset="UTF-8">
+        <title>403 Forbidden</title>
+        <style>
         body {
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #020617;
-        color: #fff;
-        font-family: system-ui, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #020617;
+            color: #fff;
+            font-family: system-ui, sans-serif;
         }
-    </style>
+        </style>
     </head>
     <body>
-    <div>
+        <div>
         <h1>403 Forbidden</h1>
         <p>Access denied.</p>
-    </div>
+        </div>
     </body>
-`;
+    </html>
+    `);
+    document.close();
 
-// STOP parsing & JS
-window.stop();
+    // HARD STOP
+    throw new Error("ACCESS BLOCKED");
 };
-
 
 if (key === allowedKey) {
     sessionStorage.setItem("access", "granted");
