@@ -8,6 +8,7 @@
     <link rel="icon" href="assets/icon.png">
     <script src="https://kit.fontawesome.com/11673fa9e8.js" crossorigin="anonymous"></script>
     <script src="js/protect.js"></script>
+    <script src="js/secure.js"></script>
     <style>
         html, body {
         margin: 0;
@@ -142,38 +143,38 @@
         </div>
 
 <script>
-document.addEventListener('contextmenu', function(e) {
-    if (e.target.tagName === 'IMG') {
-        e.preventDefault();
-    }
-});
-
-// HAMBURGER MENU
-const menuToggle = document.getElementById("menu-toggle");
-const navList = document.querySelector(".nav-list");
-
-menuToggle.addEventListener("click", () => {
-    navList.classList.toggle("active");
-    menuToggle.classList.toggle("open");
-});
-
-// SEARCH FOTO
-const searchInput = document.getElementById("search");
-
-searchInput.addEventListener("keyup", function() {
-    const keyword = this.value.toLowerCase();
-
-    document.querySelectorAll(".foto").forEach(foto => {
-        const id = (foto.getAttribute("data-id") || "").toLowerCase();
-        const alt = foto.querySelector("img").alt.toLowerCase();
-
-        if (id.includes(keyword) || alt.includes(keyword)) {
-            foto.style.display = "block";
-        } else {
-            foto.style.display = "none";
+    document.addEventListener('contextmenu', function(e) {
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
         }
     });
-});
+
+    // HAMBURGER MENU
+    const menuToggle = document.getElementById("menu-toggle");
+    const navList = document.querySelector(".nav-list");
+
+    menuToggle.addEventListener("click", () => {
+        navList.classList.toggle("active");
+        menuToggle.classList.toggle("open");
+    });
+
+    // SEARCH FOTO
+    const searchInput = document.getElementById("search");
+
+    searchInput.addEventListener("keyup", function() {
+        const keyword = this.value.toLowerCase();
+
+        document.querySelectorAll(".foto").forEach(foto => {
+            const id = (foto.getAttribute("data-id") || "").toLowerCase();
+            const alt = foto.querySelector("img").alt.toLowerCase();
+
+            if (id.includes(keyword) || alt.includes(keyword)) {
+                foto.style.display = "block";
+            } else {
+                foto.style.display = "none";
+            }
+        });
+    });
 </script>
 
 </body>

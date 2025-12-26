@@ -9,40 +9,35 @@ const allow = () => {
 };
 
 const deny = () => {
-    // HAPUS TOTAL SEMUA NODE
-    document.open();
-    document.write(`
-    <!DOCTYPE html>
-    <html lang="en">
+document.documentElement.innerHTML = `
     <head>
-        <meta charset="UTF-8">
-        <title>403 Forbidden</title>
-        <style>
+    <meta charset="UTF-8">
+    <title>403 Forbidden</title>
+    <style>
         body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #020617;
-            color: #fff;
-            font-family: system-ui, sans-serif;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #020617;
+        color: #fff;
+        font-family: system-ui, sans-serif;
         }
-        </style>
+    </style>
     </head>
     <body>
-        <div>
+    <div>
         <h1>403 Forbidden</h1>
         <p>Access denied.</p>
-        </div>
+    </div>
     </body>
-    </html>
-    `);
-    document.close();
+`;
 
-    // STOP ALL JS
-    throw new Error("ACCESS BLOCKED");
+// STOP parsing & JS
+window.stop();
 };
+
 
 if (key === allowedKey) {
     sessionStorage.setItem("access", "granted");
